@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Set the source directory and backup directory paths
+SRC_DIR="/home/kali/olamide/folder"
+BACKUP_DIR="/home/kali/olamide/backupfiles"
+
+# Set the filename for the backup tar file
+DATE=$(date +%Y-%m-%d)
+FILENAME="backup_${DATE}.tar.gz"
+
+# Create the backup tar file with the current date appended to the file>
+tar -czf "${BACKUP_DIR}/${FILENAME}" "${SRC_DIR}"
+
+echo "Backup created: ${BACKUP_DIR}/${FILENAME}"
+
