@@ -1,0 +1,19 @@
+#!/usr/bin/bash
+
+clear 
+ 
+logfile=/var/log/kali-update.log
+dt=$(date "+%d/%m/%Y  %H:%M:%S" )
+
+echo -o "\n$dt $USER Kali update" >> $logfile
+echo ""
+echo "Updating Kali Linux Please Wait"
+
+apt update -y | tee -a $logfile
+ apt-get full-upgrade -y | tee -a $logfile 
+ apt-get dist-upgrade -y  | tee -a $logfile
+ apt autoremove -y | tee -a $logfile
+ apt  autoclean -y  | tee -a $logfile
+
+echo "Update has been completed ! Enjoy!"
+
