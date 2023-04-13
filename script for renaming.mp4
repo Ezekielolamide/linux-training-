@@ -1,0 +1,10 @@
+
+#!/bin/bash
+
+#!/ usr/bin/bash
+
+for file in *.md ;
+
+do  mv -- "$file" " ${file%.md}.txt";
+done
+
